@@ -60,7 +60,7 @@ a. Using `ggplot2`, create a function that when inputting a single continuous va
 
 ```{r}
 my_plot2 <- function(variable, label, title, theme, density) {
-  
+  require(ggplot2)
   if(theme == "bw")
     e <- theme_bw()
   else
@@ -90,9 +90,19 @@ b. Similarly, create a function that when inputting two continuous variables, it
 
 ```{r}
 scatter <- function(x, y, title, smooth) {
+  require(ggplot2)
   if(smooth == "TRUE")
     f <- geom_smooth()
-  qplot(x,y) + ggtitle(title) + f
+  g <- qplot(x,y) + ggtitle(title) + f
+  h <- mean(x)
+  i <- var(x)
+  j <- mean(y)
+  k <- var(y)
+  print(g)
+  print(h)
+  print(i)
+  print(j)
+  print(k)
 }
 ```
 
